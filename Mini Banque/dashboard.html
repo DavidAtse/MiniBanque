@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MiniBanque</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Mini banque -->
+    <header>
+        <div class="brand">
+            <div class="brand-icon">₣</div>
+            <h2>Mini<span>Banque</span></h2>
+        </div>
+        <button type="button" id="logout">Se déconnecter</button>
+    </header>
+
+    <main>
+        <!-- Titulaire -->
+        <div class="titulaire-row">
+            <p id="welcome"></p>
+        </div>
+
+        <!-- Solde -->
+        <div class="balance-card">
+            <div class="balance-label">Montant que j'ai en ma possession</div>
+            <div class="balance-amount" id="solde-display">
+            0<span class="currency">FCFA</span></div>
+            <div class="balance-change" id="balance-change">—</div>
+        </div>
+
+        <!-- Stats dépôts / retraits -->
+        <div class="stats-row">
+            <div class="stat-card income">
+                <div class="stat-label">Total déposé</div>
+                <div class="stat-value" id="total-depot">0</div>
+                <div class="stat-sub">FCFA cette session</div>
+            </div>
+                <div class="stat-card expense">
+                <div class="stat-label">Total retiré</div>
+                <div class="stat-value" id="total-retrait">0</div>
+                <div class="stat-sub">FCFA cette session</div>
+            </div>
+        </div>
+
+        <!-- Opération -->
+        <div class="op-card">
+            <div class="op-title">Nouvelle opération</div>
+            <div class="input-row">
+            <div class="input-wrap">
+                <span>₣</span>
+                <input type="number" id="montant" placeholder="0"/>
+            </div>
+            <div class="btn-group">
+                <button type="button" id="btnDeposer">+ Déposer</button>
+                <button type="button" id="btnRetirer">− Retirer</button>
+            </div>
+            </div>
+            <div id="message"></div>
+        </div>
+
+        <!-- Historique -->
+        <div class="history-card">
+            <div class="history-header">Historique des transactions</div>
+            <ul id="historique">
+            <li class="empty-state">Aucune transaction pour le moment.</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
